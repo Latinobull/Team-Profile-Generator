@@ -10,4 +10,9 @@ describe("Employee class", () => {
     const employee = new Employee("bob", 21, "bob@bob.com");
     expect(employee.id).toBe(21);
   });
+
+  it("Should display employee's email", () => {
+    const employee = new Employee("bob", 21, "bob@bob.com");
+    expect(employee.email).toBe("bob@bob.com");
+  });
 });
