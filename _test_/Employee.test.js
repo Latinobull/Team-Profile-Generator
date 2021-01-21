@@ -5,4 +5,9 @@ describe("Employee class", () => {
     const employee = new Employee("bob", 21, "bob@bob.com");
     expect(employee.name).toBe("bob");
   });
+
+  it("Should display employee's id number", () => {
+    const employee = new Employee("bob", 21, "bob@bob.com");
+    expect(employee.id).toBe(21);
+  });
 });
