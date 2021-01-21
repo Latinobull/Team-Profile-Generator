@@ -28,5 +28,10 @@ describe("Employee class", () => {
       const employee = new Employee("bob", 21, "bob@bob.com");
       expect(employee.getId()).toEqual(21);
     });
+
+    it("Should display email when function is called", () => {
+      const employee = new Employee("bob", 21, "bob@bob.com");
+      expect(employee.getEmail()).toEqual("bob@bob.com");
+    });
   });
 });
