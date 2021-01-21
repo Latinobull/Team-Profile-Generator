@@ -25,12 +25,12 @@ describe("Manager Class", () => {
   describe("Manager Function", () => {
     it("Should display office number through the function", () => {
       const manager = new Manager("bob", 21, "bob@bob.com", 11234);
-      expect(manager.getRole()).toEqual(11234);
+      expect(manager.getOfficeNum()).toEqual(11234);
     });
 
     it("Should display the role of Manager", () => {
       const manager = new Manager();
-      expect(manager.getRole).toEqual("Manager");
+      expect(manager.getRole()).toEqual("Manager");
     });
   });
 });
