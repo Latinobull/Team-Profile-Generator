@@ -8,3 +8,28 @@ const render = require("./Classes/render");
 
 const OutputDIR = path.resolve(__dirname, "Output");
 const outputPath = path.join(OutputDIR, "TheTeam.html");
+
+function manager() {
+  inquirer.prompt([
+    {
+      type: "input",
+      message: "What is the name of the Manager?",
+      name: "name",
+    },
+    {
+      type: "number",
+      message: "What is his office number?",
+      name: "officeNum",
+    },
+    {
+      type: "number",
+      message: "What is his id number?",
+      name: "id",
+    },
+    {
+      type: "input",
+      message: "What is your email?",
+      name: "email",
+    },
+  ]);
+}
