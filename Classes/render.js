@@ -30,6 +30,15 @@ const renderManager = (engineer) => {
   return template;
 };
 
+const renderManager = (intern) => {
+  let dist = fs.readFileSync(path.resolve(distdir, "intern.html"), "utf-8");
+  dist = replacePlace(dist, "name", intern.getName());
+  dist = replacePlace(dist, "role", intern.getRole());
+  dist = replacePlace(dist, "email", intern.getEmail());
+  dist = replacePlace(dist, "id", intern.getId());
+  dist = replacePlace(dist, "school", intern.getSchool());
+  return template;
+};
 // const render = employees => {
 //     const html = []
 
