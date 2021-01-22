@@ -1,10 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 
-//going to need this eventually in this script
-
 const distDir = path.resolve(__dirname, "../dist");
 
+//REMMEBER THIS CODE FOR WHEN YOU NEED THIS REGEX AGAIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const replacePlace = (dist, placeholder, value) => {
   const pattern = new RegExp("{{ " + placeholder + " }}", "gm");
   return dist.replace(pattern, value);
