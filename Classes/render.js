@@ -11,37 +11,55 @@ const replacePlace = (dist, placeholder, value) => {
 };
 
 const renderManager = (manager) => {
-  let dist = fs.readFileSync(path.resolve(distdir, "manager.html"), "utf-8");
+  let dist = fs.readFileSync(path.resolve(distDir, "manager.html"), "utf-8");
   dist = replacePlace(dist, "name", manager.getName());
   dist = replacePlace(dist, "role", manager.getRole());
   dist = replacePlace(dist, "email", manager.getEmail());
   dist = replacePlace(dist, "id", manager.getId());
   dist = replacePlace(dist, "officeNumber", manager.getOfficeNum());
-  return template;
+  return dist;
 };
 
-const renderManager = (engineer) => {
-  let dist = fs.readFileSync(path.resolve(distdir, "engineer.html"), "utf-8");
+const renderEngineer = (engineer) => {
+  let dist = fs.readFileSync(path.resolve(distDir, "engineer.html"), "utf-8");
   dist = replacePlace(dist, "name", engineer.getName());
   dist = replacePlace(dist, "role", engineer.getRole());
   dist = replacePlace(dist, "email", engineer.getEmail());
   dist = replacePlace(dist, "id", engineer.getId());
   dist = replacePlace(dist, "github", engineer.getGithub());
-  return template;
+  return dist;
 };
 
-const renderManager = (intern) => {
-  let dist = fs.readFileSync(path.resolve(distdir, "intern.html"), "utf-8");
+const renderIntern = (intern) => {
+  let dist = fs.readFileSync(path.resolve(distDir, "intern.html"), "utf-8");
   dist = replacePlace(dist, "name", intern.getName());
   dist = replacePlace(dist, "role", intern.getRole());
   dist = replacePlace(dist, "email", intern.getEmail());
   dist = replacePlace(dist, "id", intern.getId());
   dist = replacePlace(dist, "school", intern.getSchool());
-  return template;
+  return dist;
 };
-// const render = employees => {
-//     const html = []
 
-// html.push(...employees.filter(emp => emp.getrole()=== "Manager").map(manager ))
+const renderMain = (html) => {
+  const dist = fs.readFileSync(path.resolve(distDir, "mock.html"), "utf-8");
+  return replacePlace(dist, "team", html);
+};
+const render = (employees) => {
+  const html = [];
 
-// }
+  html.push(
+    ...employees
+      .filter((emp) => emp.getrole() === "Manager")
+      .map((manager) => renderManager(manager))
+  );
+  html.push(
+    ...employees
+      .filter((emp) => emp.getrole() === "Engineer")
+      .map((engineer) => renderManager(engineer))
+  );
+  html.push(
+    ...employees
+      .filter((emp) => emp.getrole() === "Intern")
+      .map((intern) => renderManager(intern))
+  );
+};
