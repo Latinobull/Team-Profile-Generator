@@ -7,7 +7,7 @@ const distDir = path.resolve(__dirname, "../dist");
 
 const replacePlace = (dist, placeholder, value) => {
   const pattern = new RegExp("{{ " + placeholder + " }}", "gm");
-  return replacePlace(pattern, value);
+  return dist.replace(pattern, value);
 };
 
 const renderManager = (manager) => {
@@ -55,11 +55,15 @@ const render = (employees) => {
   html.push(
     ...employees
       .filter((emp) => emp.getrole() === "Engineer")
-      .map((engineer) => renderManager(engineer))
+      .map((engineer) => renderEngineer(engineer))
   );
   html.push(
     ...employees
       .filter((emp) => emp.getrole() === "Intern")
-      .map((intern) => renderManager(intern))
+      .map((intern) => renderIntern(intern))
   );
+
+  return renderMain(html.join(""));
 };
+
+module.exports = render;
