@@ -5,6 +5,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const render = require("./Classes/render");
+const Employee = require("./Classes/Employee");
 
 const OutputDIR = path.resolve(__dirname, "Output");
 const outputPath = path.join(OutputDIR, "TheTeam.html");
@@ -45,3 +46,20 @@ function manager() {
       addEmployee();
     });
 }
+
+function addEmployee() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Do you have any more employees?",
+        choices: ["engineer", "intern", "No more employees"],
+        name: "employee",
+      },
+    ])
+    .then((answers) => {
+      console.log(answers);
+    });
+}
+
+addEmployee();
