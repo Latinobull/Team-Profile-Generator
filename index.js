@@ -10,26 +10,38 @@ const OutputDIR = path.resolve(__dirname, "Output");
 const outputPath = path.join(OutputDIR, "TheTeam.html");
 
 function manager() {
-  inquirer.prompt([
-    {
-      type: "input",
-      message: "What is the name of the Manager?",
-      name: "name",
-    },
-    {
-      type: "number",
-      message: "What is his office number?",
-      name: "officeNum",
-    },
-    {
-      type: "number",
-      message: "What is his id number?",
-      name: "id",
-    },
-    {
-      type: "input",
-      message: "What is your email?",
-      name: "email",
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the name of the Manager?",
+        name: "name",
+      },
+      {
+        type: "number",
+        message: "What is his office number?",
+        name: "officeNum",
+      },
+      {
+        type: "number",
+        message: "What is his id number?",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "What is your email?",
+        name: "email",
+      },
+    ])
+    .then((answers) => {
+      const newManager = new Manager(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.officeNum
+      );
+      const team = [];
+      team.push(newManager);
+      addEmployee();
+    });
 }
