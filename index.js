@@ -71,4 +71,38 @@ function addEmployee() {
     });
 }
 
-addEmployee();
+function addEngineer() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the name of the Engineer?",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What is your github username?",
+        name: "github",
+      },
+      {
+        type: "number",
+        message: "What is his id number?",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "What is your email?",
+        name: "email",
+      },
+    ])
+    .then((answers) => {
+      const newEngineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.github
+      );
+      team.push(newEngineer);
+      addEmployee();
+    });
+}
