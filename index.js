@@ -103,6 +103,43 @@ function addEngineer() {
         answers.github
       );
       team.push(newEngineer);
+      console.log(team);
       addEmployee();
+    });
+}
+
+function addIntern() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the name of the Intern?",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What school do you attend?",
+        name: "school",
+      },
+      {
+        type: "number",
+        message: "What is his id number?",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "What is your email?",
+        name: "email",
+      },
+    ])
+    .then((answers) => {
+      const newIntern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.school
+      );
+      team.push(newIntern);
+      console.log(team);
     });
 }
