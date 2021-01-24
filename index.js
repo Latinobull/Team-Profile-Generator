@@ -59,6 +59,15 @@ function addEmployee() {
     ])
     .then((answers) => {
       console.log(answers);
+      if (answers.employee === "engineer") {
+        console.log("------Insert your engineer`s information------");
+        addEngineer();
+      } else if (answers.employee === "intern") {
+        console.log("------Insert your intern`s information------");
+        addIntern();
+      } else {
+        completeFile();
+      }
     });
 }
 
