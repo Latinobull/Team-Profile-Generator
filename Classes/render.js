@@ -48,17 +48,17 @@ const render = (employees) => {
 
   html.push(
     ...employees
-      .filter((emp) => emp.getrole() === "Manager")
+      .filter((emp) => emp.getRole() === "Manager")
       .map((manager) => renderManager(manager))
   );
   html.push(
     ...employees
-      .filter((emp) => emp.getrole() === "Engineer")
+      .filter((emp) => emp.getRole() === "Engineer")
       .map((engineer) => renderEngineer(engineer))
   );
   html.push(
     ...employees
-      .filter((emp) => emp.getrole() === "Intern")
+      .filter((emp) => emp.getRole() === "Intern")
       .map((intern) => renderIntern(intern))
   );
 
