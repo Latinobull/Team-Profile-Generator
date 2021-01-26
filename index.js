@@ -5,11 +5,11 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const render = require("./Classes/render");
-const Employee = require("./Classes/Employee");
 
 const OutputDIR = path.resolve(__dirname, "Output");
 const outputPath = path.join(OutputDIR, "TheTeam.html");
 
+const team = [];
 function manager() {
   inquirer
     .prompt([
@@ -41,7 +41,6 @@ function manager() {
         answers.email,
         answers.officeNum
       );
-      const team = [];
       team.push(newManager);
       addEmployee();
     });
@@ -143,3 +142,15 @@ function addIntern() {
       console.log(team);
     });
 }
+
+function completeFile() {
+  const newHtml = render(team, "My Team");
+
+  fs.writeFile("./Output/test.html", newHtml, (err) => {
+    if (err) throw err;
+
+    console.log("file has been created");
+  });
+}
+
+manager();
