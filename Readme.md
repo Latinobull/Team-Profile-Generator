@@ -43,5 +43,4 @@ Copyright Donnahue George. All Rights Reserved.
 
 # Application
 
-[![Here is a Demo of the Video](Assets/demo-screenshot.png)]
-(https://youtu.be/xt2ZCeiahNE)
+[![Here is a Demo of the Video](Assets/demo-screenshot.png)](https://youtu.be/xt2ZCeiahNE)
