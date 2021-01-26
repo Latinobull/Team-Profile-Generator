@@ -15,7 +15,7 @@ function manager() {
     .prompt([
       {
         type: "input",
-        message: "What is the name of the Manager?",
+        message: "What is the Manager`s name?",
         name: "name",
       },
       {
@@ -30,7 +30,7 @@ function manager() {
       },
       {
         type: "input",
-        message: "What is your email?",
+        message: "What is his email?",
         name: "email",
       },
     ])
@@ -52,7 +52,7 @@ function addEmployee() {
       {
         type: "list",
         message: "Do you have any more employees?",
-        choices: ["engineer", "intern", "No more employees"],
+        choices: ["engineer", "intern", "There are no more employees"],
         name: "employee",
       },
     ])
@@ -75,12 +75,12 @@ function addEngineer() {
     .prompt([
       {
         type: "input",
-        message: "What is the name of the Engineer?",
+        message: "What is the Engineer`s name?",
         name: "name",
       },
       {
         type: "input",
-        message: "What is your github username?",
+        message: "What is his github username?",
         name: "github",
       },
       {
@@ -90,7 +90,7 @@ function addEngineer() {
       },
       {
         type: "input",
-        message: "What is your email?",
+        message: "What is his email?",
         name: "email",
       },
     ])
@@ -112,12 +112,12 @@ function addIntern() {
     .prompt([
       {
         type: "input",
-        message: "What is the name of the Intern?",
+        message: "What is the your Intern's name?",
         name: "name",
       },
       {
         type: "input",
-        message: "What school do you attend?",
+        message: "What school does he attend?",
         name: "school",
       },
       {
@@ -127,7 +127,7 @@ function addIntern() {
       },
       {
         type: "input",
-        message: "What is your email?",
+        message: "What is his email?",
         name: "email",
       },
     ])
