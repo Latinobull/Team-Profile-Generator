@@ -140,13 +140,14 @@ function addIntern() {
       );
       team.push(newIntern);
       console.log(team);
+      addEmployee();
     });
 }
 
 function completeFile() {
   const newHtml = render(team, "My Team");
 
-  fs.writeFile("./Output/test.html", newHtml, (err) => {
+  fs.writeFile(outputPath, newHtml, (err) => {
     if (err) throw err;
 
     console.log("file has been created");
